@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=League+Gothic&family=Montserrat:wght@800&family=Poppins:wght@400;600&display=swap'); 
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(31, 23, 51);
+
+   
+}
+
+.heading{
+    font-family: poppins;
+    text-align: center;
+    padding: 3rem;
+    color:white;
+    font-size: 3rem;
+}
+
+.submitbutton{
+    width:5rem;
+    background-color: black;
+    color:white;
+    margin-top: 1rem;
+}
+.submitbutton:hover{
+    border-radius: 50px;
+    background-color: rebeccapurple;
+}
+
+.inputform{
+    background-color: white;
+    font-family: poppins;
+    font-weight:40;
+    width:300px;
+    height:300px;
+    border-radius: 25px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+}
