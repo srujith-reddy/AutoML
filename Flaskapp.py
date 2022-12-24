@@ -16,14 +16,20 @@ app=Flask(__name__)
 def home():
     return render_template('index.html')
 
-@app.route('/upload', methods=['GET','POST'])
+
+
+@app.route('/upload',methods=['POST'])
 def upload():
-  file = request.files['uploaded_file']
-  if file and allowed_file(file.filename):
-        filename=secure_filename(file.filename)
-        new_filename= f'{filename.split(".")[0]}_{str(datetime.now())}.csv'
-        file.save(os.path.join('input',new_filename))
-  return 'File uploaded successfully!'
+    if request.method=='POST':
+        file=request.files['uploaded_file']
+        if file and allowed_file(file.filename):
+            new_filename=secure_filename(file.filename)
+            # new_filename=f'{filename.split(".")[0]}_{str(datetime.now())}.csv'
+            file.save(os.path.join('input',new_filename))
+        return 'file uploaded succesfully'
+        
+        
+
   
 
 if __name__=="__main__":

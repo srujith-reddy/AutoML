@@ -5,21 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🧠 Predict your model</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 
-    <h4 class="heading">Welcome to AutoML</h4>
+    <h4 class="heading">Welcome to<span> AutoML</span></h4>
             <div class="inputform" >
-               
 
                   <form action="/upload" method="POST" enctype="multipart/form-data">
-                    <input type="file" name="uploaded_file">
+                    <h4>Dataset</h4>
+                    <input class="fileinput" type="file" name="uploaded_file" requried>
                     <input class="submitbutton" type="submit" value="Upload">
                   </form>
                   
                   
             </div>
+
+            <div class="design">
+
+            </div>
+
+            <div class="triangle">
+              <div>
+
+            
+
+
+            
+              
             
 </body>
 </html>
