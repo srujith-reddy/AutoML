@@ -1,11 +1,19 @@
 <html>
     <head>
         <title>My CSV Page</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/appstyle.css') }}">
+    </body>
     </head>
     <body>
 
-        <h3>This is the data in your dataset</h3>
-        <table>
+        <h3 class="heading">This is the data in your dataset</h3>
+        <button id="vis" class="visualise">Visualize</button>
+        <script>
+            document.getElementById("vis").addEventListener("click", function() {
+                window.location.href = "/click";
+            });
+        </script>
+        <table class="dataset">
             <thead>
               <tr>
                   {% for h in header %}

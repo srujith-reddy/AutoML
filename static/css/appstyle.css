@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=League+Gothic&family=Montserrat:wght@800&family=Poppins:wght@400;600&display=swap'); 
+
+body{
+    background-color:#181823;
+    overflow-x: scroll;
+    color:white;    
+}
+.heading{
+    text-align: center;
+    background-color: #537FE7;
+    color:black;
+
+}
+
+.visualise{
+    font-family:poppins;
+    margin-bottom:25px;
+    margin-left:100vh;
+    background-color: #B3005E;
+    color:white;
+    height:50px;
+    width:100px;
+    border-radius: 5px;
+}
+
+.visualise:hover{
+    cursor: pointer;
+    background-color:#E90064;
+    border-radius:20px;
+}

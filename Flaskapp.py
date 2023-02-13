@@ -16,6 +16,11 @@ app=Flask(__name__)
 
 @app.route("/")
 def home():
+    folder = "./input/"
+    filepath = os.listdir(folder)
+    (filename)=filepath[0]
+    filepath=os.path.join(folder,filename)
+    os.remove(filepath)
     return render_template('index.html')
 
 
@@ -45,6 +50,9 @@ def index():
     return render_template("app.html", header=header, data=data)
 
 
+@app.route("/click")    #javascript's windows href is added
+def visualize():
+    return render_template("vizeda.html")
 
     
     
