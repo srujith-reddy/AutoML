@@ -3,10 +3,12 @@
         <title>My CSV Page</title>
     </head>
     <body>
+
+        <h3>This is the data in your dataset</h3>
         <table>
             <thead>
-                <tr>
-                    {% for h in header %}
+              <tr>
+                  {% for h in header %}
                         <th>{{ h }}</th>
                     {% endfor %}
                 </tr>

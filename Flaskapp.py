@@ -1,8 +1,10 @@
 import csv
+import pandas as pd
 import os
 from werkzeug.utils import secure_filename
 from datetime import datetime
 from flask import Flask,render_template,request
+from flask import redirect,url_for
 
 ALLOWED_EXTENSIONS=set(['csv'])
 
@@ -26,19 +28,26 @@ def upload():
             new_filename=secure_filename(file.filename)
             # new_filename=f'{filename.split(".")[0]}_{str(datetime.now())}.csv'
             file.save(os.path.join('input',new_filename))
-        return 'file uploaded succesfully'
+        return redirect(url_for('index'))
 
 
-@app.route("/dataset")
+@app.route("/dataset",methods=['GET'])
 def index():
-    input = "./input/"
-    filename = os.listdir(input)
-    with open("filename") as f:
+    folder = "./input/"
+    filepath = os.listdir(folder)
+    (filename)=filepath[0]
+    filepath=os.path.join(folder,filename)
+    dataset=pd.read_csv(filepath)
+    with open(filepath) as f:
         reader = csv.reader(f)
         header = next(reader)
         data = list(reader)
     return render_template("app.html", header=header, data=data)
-        
+
+
+
+    
+    
         
 
   
