@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>My CSV Page</title>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    {% for h in header %}
+                        <th>{{ h }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data %}
+                    <tr>
+                        {% for value in row %}
+                            <td>{{ value }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</html>

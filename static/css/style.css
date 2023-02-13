@@ -59,6 +59,7 @@ h4{
 
 span:hover{
     color:lightblue;
+    cursor: pointer;
     
 }
 
@@ -76,6 +77,8 @@ span:hover{
     background-color: floralwhite;
     opacity:0.5;
 }
+
+
 
 
 

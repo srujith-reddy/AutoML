@@ -27,6 +27,17 @@ def upload():
             # new_filename=f'{filename.split(".")[0]}_{str(datetime.now())}.csv'
             file.save(os.path.join('input',new_filename))
         return 'file uploaded succesfully'
+
+
+@app.route("/dataset")
+def index():
+    input = "./input/"
+    filename = os.listdir(input)
+    with open("filename") as f:
+        reader = csv.reader(f)
+        header = next(reader)
+        data = list(reader)
+    return render_template("app.html", header=header, data=data)
         
         
 
