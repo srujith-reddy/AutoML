@@ -7,5 +7,33 @@
 }
 
 body{
-    background-color: #243763;
+    background-color: #2c243a;
+}
+
+.heading{
+    font-family: poppins;
+    font-size:25px;
+    color:white;
+    text-align: center;
+    margin-top: 25px;
+}
+
+
+.eda{
+    width:250px;
+    min-height: 40vh;
+    background-color: beige;
+    margin:25px 25px 25px 500px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:flex-start;
+    text-align: left;
+    border-radius:10px
+}
+
+.eda h5{
+    border-bottom:1px solid black;
+    padding:5px;
+    font-family: poppins;
 }
