@@ -21,7 +21,7 @@ body{
 
 .eda{
     width:250px;
-    min-height: 40vh;
+    min-height: 30vh;
     background-color: beige;
     margin:25px 25px 25px 500px;
     display:flex;
@@ -36,4 +36,75 @@ body{
     border-bottom:1px solid black;
     padding:5px;
     font-family: poppins;
+}
+
+.eda span{
+    color:rebeccapurple;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+}
+
+.colbutton{
+    width:100px;
+    height:25px;
+    background-color:#FCC2FC;
+    border:none;
+    margin-left:100px;
+    margin-bottom: 25px;
+    margin-top:25px;
+    margin-right:25px;
+    font-family:poppins;
+    border-radius: 5px;
+
+}
+
+.colbutton:hover{
+    cursor: pointer;
+}
+
+.columns h4{
+    margin-left:100px;
+    color:white;
+    font-family:poppins;
+}
+
+.compute{
+    width:100px;
+    height:25px;
+    margin-left:550px;
+    margin-bottom:50px;
+    background-color: rebeccapurple;
+    color:white;
+    font-family: poppins;
+    border:none;
+    border-radius:5px;
+}
+
+.compute:hover{
+    cursor:pointer;
+    border-radius: 10px;
+}
+
+.numimage{
+    margin-left:250px;
+    max-width:100%;
+    height:1000px;
+}
+
+
+.numgraphtext{
+    color:white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-left:250px;
+    margin-bottom:25px;
+    margin-top:25px;
+}
+
+.categoricaltext{
+    color:white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-left:250px;
+    margin-bottom:25px;
+    margin-top:25px;
+    
 }

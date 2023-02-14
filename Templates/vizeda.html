@@ -11,14 +11,32 @@
     <body>
         <h5 class="heading">Exploratory Data analysis is being performed</h5>
         <div id="eda" class="eda">
-            <h5>Total cols:<span></span></h5><hr>
-            <h5>Total Rows:<span></span></h5><Hr>
-            <h5>Index:<span></span></h5><hr>
-            <h5>Categorical attributes:<span></span></h5><hr>
-            <h5>Numerical attributes:<span></span></h5><hr>
-            <h5>Null values:<span></span></h5><hr>
-            <h5>ldsjfljsj:<span></span></h5><hr>
+            <h5>Total cols:<span>    {{ var1 }}</span></h5>
+            <h5>Total Rows:<span>   {{var2}}</span></h5>
+            <h5>Categorical attributes:<span>  {{var3}}</span></h5>
+            <h5>Numerical attributes:<span>  {{var4}}</span></h5>
+            <h5>Null values:<span>  {{var5}}</span></h5>
         </div>
+
+        <div class="columns" id="columns">
+            <h4>Columns in the dataset</h4>
+            {% for col in columns %}
+            <button class="colbutton">{{ col }}</button>
+          {% endfor %}
+
+        </div>
+
+        <div class="numericaldatagraph">
+            <h4 class="numgraphtext">Numerical count Estimation</h4>
+            <img class="numimage" src="data:image/png;base64,{{ image1 }}">
+        </div>
+        <div class="categoricaldatagraph">
+            <h4 class="categoricaltext">Categorical count Estimation</h4>
+            <img class="numimage" src="data:image/png;base64,{{ image2 }}">
+        </div>
+
+
+
         
         
     </body>
