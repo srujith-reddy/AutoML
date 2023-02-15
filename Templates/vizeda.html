@@ -21,11 +21,13 @@
         <div class="columns" id="columns">
             <h4>Columns in the dataset</h4>
             {% for col in columns %}
-            <button class="colbutton">{{ col }}</button>
-          {% endfor %}
+            <button class="colbutton" id="colbutton" onclick="handleButtonClick(event)" data-col="{{ col }}">{{ col }}</button>
+            {% endfor %}
 
         </div>
-
+        <h4 class="targetinput">Enter the target variables</h4>
+        <input type="text" id="targettext" class="targettext">
+        <button class="targetsubmit" id="targetsubmit">submit</button>
         <div class="numericaldatagraph">
             <h4 class="numgraphtext">Numerical count Estimation</h4>
             <img class="numimage" src="data:image/png;base64,{{ image1 }}">
@@ -33,11 +35,22 @@
         <div class="categoricaldatagraph">
             <h4 class="categoricaltext">Categorical count Estimation</h4>
             <img class="numimage" src="data:image/png;base64,{{ image2 }}">
+
         </div>
-
-
+      <script src={{url_for('static',filename='js/vizscript.js')}}></script>
+      <script>
+        function handleButtonClick(event) {
+          var col = event.target.getAttribute("data-col");
+          console.log("Button clicked: " + col);
+          // Add your code here to do something with the clicked column
+        }
+      </script>
 
         
+
+
+
+
         
     </body>
 </html>

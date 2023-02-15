@@ -101,9 +101,7 @@ def visualize():
     
     
     
-    
-    
-    os.remove(filepath)
+
     return render_template("vizeda.html",var1=num_cols,var2=num_rows,var3=num_cat_cols,var4=num_discrete_cols,var5=num_null,columns=columns,image1=pngImageB64,image2=pngImage2B64) 
 
 

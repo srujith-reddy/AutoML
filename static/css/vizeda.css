@@ -108,3 +108,29 @@ body{
     margin-top:25px;
     
 }
+
+
+.targettext{
+    height:25px;
+    margin-left:500px;
+    margin-bottom:25px;
+    border:1px solid black;
+
+}
+
+.targetsubmit{
+    width:100px;
+    height:25px;
+    background-color: palevioletred;
+    color:white;
+    border:none;
+    border-radius: 5px;
+}
+
+.targetinput{
+    font-family: poppins;
+    margin-top:50px;
+    margin-left:500px;
+    color:white;    
+
+}
