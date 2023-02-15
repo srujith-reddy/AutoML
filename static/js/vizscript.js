@@ -6,9 +6,16 @@ targetsubmit.addEventListener('click',function(){
         console.log(targetoutput);
 })
 
-clicked_button.addEventListener('click',function(){
-    let content=clicked_button.textContent;
-    console.log(content);
-})
 
+function handleButtonClick(event) {
+    var col = event.target.getAttribute("data-col");
+    console.log("Button clicked: " + col);
 
+}
+
+function sendClickedButtonToServer(col) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "/handle-clicked-button");
+    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    xhr.send(JSON.stringify({ col: col }));
+  }

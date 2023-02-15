@@ -9,7 +9,8 @@
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/vizeda.css') }}">
     </head>
     <body>
-        <h5 class="heading">Exploratory Data analysis is being performed</h5>
+        <h5 class="heading">Exploratory Data analysis</h5>
+        <div class="totaleda" id="totaleda">
         <div id="eda" class="eda">
             <h5>Total cols:<span>    {{ var1 }}</span></h5>
             <h5>Total Rows:<span>   {{var2}}</span></h5>
@@ -17,6 +18,18 @@
             <h5>Numerical attributes:<span>  {{var4}}</span></h5>
             <h5>Null values:<span>  {{var5}}</span></h5>
         </div>
+        <div class="discat">
+            {% for cat_col in var6 %}
+            <h4 class="showcatcols">{{cat_col}}</h4>
+            {% endfor %}
+        </div>
+        <div class="disnum">
+            {% for num_col in var7 %}
+            <h4 class="shownumcols">{{num_col}}</h4>
+            {% endfor %}
+        </div>
+
+    </div>
 
         <div class="columns" id="columns">
             <h4>Columns in the dataset</h4>
@@ -25,9 +38,14 @@
             {% endfor %}
 
         </div>
-        <h4 class="targetinput">Enter the target variables</h4>
-        <input type="text" id="targettext" class="targettext">
-        <button class="targetsubmit" id="targetsubmit">submit</button>
+
+        
+            <h4 class="targetinput">Enter the target variables</h4>
+            <div>
+            <input type="text" id="targettext" class="targettext">
+            <button class="targetsubmit" id="targetsubmit">submit</button>
+            
+
         <div class="numericaldatagraph">
             <h4 class="numgraphtext">Numerical count Estimation</h4>
             <img class="numimage" src="data:image/png;base64,{{ image1 }}">
@@ -38,13 +56,7 @@
 
         </div>
       <script src={{url_for('static',filename='js/vizscript.js')}}></script>
-      <script>
-        function handleButtonClick(event) {
-          var col = event.target.getAttribute("data-col");
-          console.log("Button clicked: " + col);
-          // Add your code here to do something with the clicked column
-        }
-      </script>
+      
 
         
 

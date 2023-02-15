@@ -8,6 +8,8 @@
 
 body{
     background-color: #2c243a;
+    overflow: hidden;
+    
 }
 
 .heading{
@@ -18,12 +20,59 @@ body{
     margin-top: 25px;
 }
 
+.totaleda{
+    width:1000px;
+    min-height: 100vh;
+    margin-left:200px;
+    margin-right:50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: aqua;
+    
+}
+
+.discat{
+    margin:25px;
+    font-family: poppins;
+    padding:1rem;
+    width:5rem;
+    min-height:5rem;
+    background-color:white;
+    color:black;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:flex-start;
+    text-align: left;
+    border-radius:10px
+    
+}
+
+.disnum{
+    margin:25px;
+    font-family: poppins;
+    padding:1rem;
+    min-width:5rem;
+    min-height:5rem;
+    background-color:white;
+    color:black;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:flex-start;
+    text-align: left;
+    border-radius:10px
+
+}
+
 
 .eda{
     width:250px;
     min-height: 30vh;
     background-color: beige;
-    margin:25px 25px 25px 500px;
+    margin:25px 25px 25px 25px;
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -132,5 +181,5 @@ body{
     margin-top:50px;
     margin-left:500px;
     color:white;    
-
 }
+
