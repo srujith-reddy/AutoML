@@ -9,7 +9,8 @@
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/vizeda.css') }}">
     </head>
     <body>
-        <h5 class="heading">Exploratory Data analysis</h5>
+  
+        <h1 class="heading">Exploratory Data analysis</h1>
         <div class="totaleda" id="totaleda">
         <div id="eda" class="eda">
             <h5>Total cols:<span>    {{ var1 }}</span></h5>
@@ -19,11 +20,13 @@
             <h5>Null values:<span>  {{var5}}</span></h5>
         </div>
         <div class="discat">
+            <h5 class="headingofcat">Categorical Attributes</h5>
             {% for cat_col in var6 %}
             <h4 class="showcatcols">{{cat_col}}</h4>
             {% endfor %}
         </div>
         <div class="disnum">
+            <h5 class="headingofnum">Numerical Attributes</h5>
             {% for num_col in var7 %}
             <h4 class="shownumcols">{{num_col}}</h4>
             {% endfor %}
@@ -34,11 +37,10 @@
         <div class="columns" id="columns">
             <h4>Columns in the dataset</h4>
             {% for col in columns %}
-            <button class="colbutton" id="colbutton" onclick="handleButtonClick(event)" data-col="{{ col }}">{{ col }}</button>
+            <button class="colbutton" id="colbutton"  >{{ col }}</button>
             {% endfor %}
 
         </div>
-
         
             <h4 class="targetinput">Enter the target variables</h4>
             <div>
