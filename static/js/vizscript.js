@@ -22,22 +22,36 @@ const buttons = document.querySelectorAll('.colbutton');
 buttons.forEach(button => {
   button.addEventListener('click', function() {
     var col=button.textContent;
-    console.log('button clicked:'+col);
+    // console.log('button clicked:'+col);
     button.classList.toggle('clicked');
     clicked_buttons_array.push(col);
+    for(let i=0;i<clicked_buttons_array.length;i++)
+{
+  console.log(clicked_buttons_array[i]);
+}
+
+    
 
   });
 });
 
+
+const processbutton=document.getElementById('trainpage');
+processbutton.addEventListener('click',function(){
+        window.location.href="/processdata";
+})
+
+myArray=clicked_buttons_array;
 $.ajax({
   type: "POST",
   url: "/processdata",
-  data: { array_data: clicked_buttons_array },
+  data: JSON.stringify(myArray),
+  contentType: "application/json; charset=utf-8",
+  dataType: "json",
   success: function(response) {
-    console.log(response);
+      console.log(response);
   },
   error: function(error) {
-    console.log(error);
+      console.log(error);
   }
 });
-

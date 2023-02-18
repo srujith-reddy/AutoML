@@ -9,6 +9,11 @@
     </head>
     <body>
                 <h5>Data passed successfully</h5>
+                <div class="trainparams">
+                      {% for data_col in dataset_cols%}
+                        <h5>{{data_col}}</h5>
+                      {%endfor%}
+                </div>
         
        
     </body>

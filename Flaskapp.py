@@ -105,14 +105,10 @@ def visualize():
     return render_template("vizeda.html",var1=num_cols,var2=num_rows,var3=num_cat_cols,var4=num_discrete_cols,var5=num_null,columns=columns,image1=pngImageB64,image2=pngImage2B64,var6=cat_cols,var7=discrete_cols) 
 
 
-@app.route('/processdata', methods=['POST'])
+@app.route('/processdata', methods=['GET'])
 def processdata():
-  array_data = request.form.getlist('array_data[]')
-  
-  # Do something with the array
-  result = "Array Length: " + str(len(array_data))
-  
-  return render_template("processdata.html")
+    my_array = request.get_json()
+    return render_template("processdata.html" ,dataset_cols=my_array)
 
 
 
