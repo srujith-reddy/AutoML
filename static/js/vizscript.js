@@ -4,19 +4,11 @@ const subtn=document.getElementById('targetsubmit')
 targetsubmit.addEventListener('click',function(){
         let targetoutput=tv.value;
         console.log(targetoutput);
+        tv.value="";
+        postData();
 })
 
-clicked_buttons_array=[];
-
-
-
-
-// function handleButtonClick(event) {
-//     var col = event.target.getAttribute("data-col");
-//     console.log("Button clicked: " + col);
-//     col.classList.add('clicked');
-
-// }
+var clicked_buttons_array=[];
 
 const buttons = document.querySelectorAll('.colbutton');
 buttons.forEach(button => {
@@ -25,33 +17,34 @@ buttons.forEach(button => {
     // console.log('button clicked:'+col);
     button.classList.toggle('clicked');
     clicked_buttons_array.push(col);
-    for(let i=0;i<clicked_buttons_array.length;i++)
-{
-  console.log(clicked_buttons_array[i]);
-}
-
-    
 
   });
 });
 
+function postData() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.open("POST", "/processdata", true);
+  xhttp.setRequestHeader("Content-Type", "application/json");
+  var data = {
+    "clicked_buttons_array": clicked_buttons_array
+  };
+  var json_data = JSON.stringify(data);
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4) {
+      if (this.status == 200) {
+          console.log(this.responseText);
+          var form = document.createElement('form');
+          form.method = 'POST';
+          form.action = '/FeatureEngineering';
+          document.body.appendChild(form);
+          form.submit();
+        } else {
+          console.error('Server error: ' + this.status);
+          alert('Error: ' + this.status + ' ' + this.statusText);
+      }
+    }
+  };
+  xhttp.send(json_data);
+}
 
-const processbutton=document.getElementById('trainpage');
-processbutton.addEventListener('click',function(){
-        window.location.href="/processdata";
-})
 
-myArray=clicked_buttons_array;
-$.ajax({
-  type: "POST",
-  url: "/processdata",
-  data: JSON.stringify(myArray),
-  contentType: "application/json; charset=utf-8",
-  dataType: "json",
-  success: function(response) {
-      console.log(response);
-  },
-  error: function(error) {
-      console.log(error);
-  }
-});

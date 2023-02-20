@@ -10,6 +10,9 @@ import seaborn as sns
 import numpy as np
 import io
 import base64
+from flask import jsonify
+from flask import session
+
 
 
 ALLOWED_EXTENSIONS=set(['csv'])
@@ -19,6 +22,8 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 app=Flask(__name__)
+app.secret_key = 'my-secret-key'
+
 
 @app.route("/")
 def home():
@@ -104,15 +109,24 @@ def visualize():
 
     return render_template("vizeda.html",var1=num_cols,var2=num_rows,var3=num_cat_cols,var4=num_discrete_cols,var5=num_null,columns=columns,image1=pngImageB64,image2=pngImage2B64,var6=cat_cols,var7=discrete_cols) 
 
-
-@app.route('/processdata', methods=['GET'])
+@app.route('/processdata', methods=['POST'])
 def processdata():
-    my_array = request.get_json()
-    return render_template("processdata.html" ,dataset_cols=my_array)
+    data = request.get_json()
+    clicked_buttons_array = data['clicked_buttons_array']
+    return redirect('/FeatureEngineering', code=307)
+   
 
+@app.route('/FeatureEngineering', methods=['POST'])
+def success():
+    return 'Data received'
+    
+    
 
 
 
 if __name__=="__main__":
     app.run(debug=True)
     
+    
+
+
