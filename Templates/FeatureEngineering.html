@@ -12,19 +12,29 @@
     <body>
                 <h1 class="heading">Steps of preprocessing</h1>
 
-                <button class="ajaxbutton">Show Data cols</button>
 
-                <div>
+                <div class="trainingattributes">
+                  
                   {% if dataset_cols %}
+                      <h4>You selected these cols for training</h4>
+                      <div class="attributes">
                     {% for dataset_col in dataset_cols %}
-                      <h5>{{ dataset_col }}</h5>
+                      <button class="attributename">{{ dataset_col }}</button>
                     {% endfor %}
                   {% else %}
                     <h5>No data available</h5>
                   {% endif %}
                 </div>
+              </div>
 
-                <h5>{{var6}}</h5>
+                <div class="targetattribute">
+                  <h4>Target Attribute</h4>
+                  <button class="targetbutton">{{targetattribute}}</button>
+                </div>
+
+
+
+
                 <script src={{url_for('static',filename='js/vizscript.js')}}></script>
                 <script src="{{ url_for('static', filename='js/jquery-3.6.0.min.js') }}"></script>
                 

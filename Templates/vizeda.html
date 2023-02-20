@@ -35,7 +35,7 @@
     </div>
 
         <div class="columns" id="columns">
-            <h4>Columns in the dataset</h4>
+            <h4>Select Cols for training</h4>
             {% for col in columns %}
             <button class="colbutton" id="colbutton"  >{{ col }}</button>
             {% endfor %}
@@ -45,10 +45,7 @@
             <h4 class="targetinput">Enter the target variables</h4>
             <div>
             <input type="text" id="targettext" class="targettext">
-            <button class="targetsubmit" id="targetsubmit">submit</button>
-
-   <button class="trainpage" id="trainpage">nextpage</button>
-            
+            <button class="targetsubmit" id="targetsubmit">submit</button>            
 
         <div class="numericaldatagraph">
             <h4 class="numgraphtext">Numerical count Estimation</h4>

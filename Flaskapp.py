@@ -113,12 +113,18 @@ def visualize():
 def processdata():
     data = request.get_json()
     clicked_buttons_array = data['clicked_buttons_array']
+    targetattribute=data['targetvalue']
+    session['clicked_buttons_array']=clicked_buttons_array
+    session['targetattribute']=targetattribute
     return redirect('/FeatureEngineering', code=307)
    
 
 @app.route('/FeatureEngineering', methods=['POST'])
-def success():
-    return 'Data received'
+def FeatureEngineering():
+    clicked_buttons_array = session.get('clicked_buttons_array')
+    targetattribute=session.get('targetattribute')
+    
+    return render_template('FeatureEngineering.html',dataset_cols=clicked_buttons_array,targetattribute=targetattribute)
     
     
 

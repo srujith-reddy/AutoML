@@ -11,24 +11,55 @@ body{
     background-color: rgb(33, 33, 51);
 }
 
-.ajaxbutton{
-    font-family: poppins;
-    font-weight: 1000;
-    width:200px;
-    height:25px;
-    border-radius: 5px;
-    background-color: greenyellow;
-    margin-left:550px;
+.trainingattributes{
+    background-color: white;
+    min-width:100px;
+    min-height:100px;
+    margin-left:250px;
+    margin-top:25px;
+    margin-right:250px;
     margin-bottom:25px;
-    border: none;
-    
+    border-radius: 5px;
+    font-family: poppins;
+    text-align: center;
+}
+
+.attributes{
+    display:flex;
+    margin:10px;
+    justify-content: center;
+}
+
+.attributename{
+    color:purple;
+    text-align:left;
+    padding:10px;
+    font-size: larger;
+    cursor: pointer;
+}
+
+.targetattribute{
+    background-color:black;
+    color:white;
+    min-width: 100px;
+    min-height:50px;
+    margin-left:450px;
+    margin-right:450px;
+    text-align: center;
+    padding:1rem;
+    font-family: poppins;
+    border-radius: 5px;
+}
+
+.targetbutton{
+    color:purple;
+    padding:10px;
+    margin-top: 2px;
+    cursor: pointer;
+    font-size: larger;
 
 }
-.ajaxbutton:hover{
-    cursor:pointer;
-    border-radius: 15px;
-    background-color: green;
-}
+
 
 .heading{
     color:white;

@@ -1,8 +1,9 @@
 // const clicked_button=document.getElementById('colbutton');
 const tv=document.getElementById('targettext');
-const subtn=document.getElementById('targetsubmit')
-targetsubmit.addEventListener('click',function(){
-        let targetoutput=tv.value;
+const submitbtn=document.getElementById('targetsubmit');
+var targetoutput;
+submitbtn.addEventListener('click',function(){
+        targetoutput=tv.value;
         console.log(targetoutput);
         tv.value="";
         postData();
@@ -26,7 +27,8 @@ function postData() {
   xhttp.open("POST", "/processdata", true);
   xhttp.setRequestHeader("Content-Type", "application/json");
   var data = {
-    "clicked_buttons_array": clicked_buttons_array
+    "clicked_buttons_array": clicked_buttons_array,
+    "targetvalue":targetoutput
   };
   var json_data = JSON.stringify(data);
   xhttp.onreadystatechange = function() {
