@@ -1,5 +1,4 @@
 import csv
-import pandas as pd
 import os
 from werkzeug.utils import secure_filename
 from datetime import datetime
@@ -12,6 +11,9 @@ import io
 import base64
 from flask import jsonify
 from flask import session
+import pandas as pd
+# from pandas_profiling import ProfileReport
+
 
 
 
@@ -89,7 +91,7 @@ def visualize():
     
     
     
-    #drawing cat_cols
+    # drawing cat_cols
     fig,axes=plt.subplots(5,2,figsize=(15,25))
     palettes=['viridis','Set1','prism','rocket']
     axes=axes.flatten()
@@ -107,7 +109,7 @@ def visualize():
     
     
 
-    return render_template("vizeda.html",var1=num_cols,var2=num_rows,var3=num_cat_cols,var4=num_discrete_cols,var5=num_null,columns=columns,image1=pngImageB64,image2=pngImage2B64,var6=cat_cols,var7=discrete_cols) 
+    return render_template("vizeda.html",var1=num_cols,var2=num_rows,var3=num_cat_cols,var4=num_discrete_cols,var5=num_null,columns=columns,image1=pngImageB64,var6=cat_cols,var7=discrete_cols) 
 
 @app.route('/processdata', methods=['POST'])
 def processdata():
@@ -121,8 +123,17 @@ def processdata():
 
 @app.route('/FeatureEngineering', methods=['POST'])
 def FeatureEngineering():
+    folder = "./input/"
+    filepath = os.listdir(folder)
+    (filename)=filepath[0]
+    filepath=os.path.join(folder,filename)
+    dataset=pd.read_csv(filepath)
+    cat_cols=dataset.select_dtypes(exclude="number").columns
+    discrete_cols=dataset.select_dtypes(include="number").columns
     clicked_buttons_array = session.get('clicked_buttons_array')
     targetattribute=session.get('targetattribute')
+    
+    
     
     return render_template('FeatureEngineering.html',dataset_cols=clicked_buttons_array,targetattribute=targetattribute)
     

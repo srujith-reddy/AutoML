@@ -45,6 +45,7 @@ body{
     min-height:50px;
     margin-left:450px;
     margin-right:450px;
+    margin-bottom:105px;
     text-align: center;
     padding:1rem;
     font-family: poppins;
@@ -66,3 +67,28 @@ body{
     margin-bottom:25px;
     text-align: center;
 }
+
+/* .catimage,.numimage{
+    min-width:500px;
+    height:1000px;
+    margin-left:250px;
+    margin-right:250px;
+    margin-top:25px;
+    margin-bottom:25px;
+    border-radius: 5px;
+
+}
+
+.edaheading{
+    text-align: center;
+    color:white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: large;
+}
+
+.catgraph{
+    display:flex;
+    justify-content: center; 
+}
+
+*/
