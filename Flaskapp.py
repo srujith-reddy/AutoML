@@ -132,10 +132,26 @@ def FeatureEngineering():
     discrete_cols=dataset.select_dtypes(include="number").columns
     clicked_buttons_array = session.get('clicked_buttons_array')
     targetattribute=session.get('targetattribute')
+    #perform preprocessing  and
+    # Now train the model
+    
+    #under prepro
+    
+    sample_data_cols=clicked_buttons_array
+    print(sample_data_cols)
+    train_dataset=dataset[sample_data_cols]
+    train_dataset.dropna()
+    print(train_dataset)
+    
+    
+    
     
     
     
     return render_template('FeatureEngineering.html',dataset_cols=clicked_buttons_array,targetattribute=targetattribute)
+    
+    
+    
     
     
 
